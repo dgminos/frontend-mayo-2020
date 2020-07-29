@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="html5,bootstrap">
+    <meta name="keywords" content="html5,bootstrap,turismo">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.bundle.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+
+
+
+    <title>Construyendo Caminos</title>
+
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+        }
+
+        h1 {
+            font-size: 5rem;
+        }
+
+        p {
+            font-size: 3rem;
+        }
+
+        h2,
+        h3 {
+            text-align: center;
+
+        }
+
+        h6 {
+            color: #fff;
+        }
+
+
+        .card-text {
+            font-size: 1rem;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+        }
+
+        .textofooter,
+        i {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .footerbg {
+            background-color: #343a40;
+        }
+
+        a {
+            border-color: #000000;
+            color: #28a745;
+        }
+
+        body {
+            background: #f5f5f5;
+        }
+
+        .rounded-lg {
+            border-radius: 1rem;
+        }
+
+        .nav-pills .nav-link {
+            color: #555;
+        }
+
+        .nav-pills .nav-link.active {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                        <nav class="navbar navbar-light bg-dark">
+                            <a class="navbar-brand" href="#">
+                                <img src="imagenes-tp1/logo.png" width="80" height="80" alt="">
+                            </a>
+                        </nav>
+                        <a class="navbar-brand navbar-light" href="#">
+                            <i class="large material-icons">home</i>
+                            Home
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <i class="large material-icons">star</i>
+                                        Destinos <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <i class="large material-icons">add_shopping_cart</i>
+                                        Carrito</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <i class="large material-icons">people</i>
+                                        Contacto</a>
+                                </li>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="A dónde querés viajar?"
+                                    aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <main>
+            <div class="card mt-3 mb-3">
+                <img src="../tp1/imagenes-tp1/coromandelcheckout.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Desde 250 us$ por persona</h5>
+                    <p class="card-text text-center">Tickets para: Hospedaje por una noche en hotel Ibis 3 estrellas con
+                        desayuno
+                        incluído en Auckland, Nueva Zelanda+excursión a Península de Coromandel+almuerzo incluído</p>
+                    <p class="card-text text-center"><small class="text-muted">Cancelación gratuita hasta 3 días
+                            antes</small></p>
+                </div>
+            </div>
+            <h2>Seleccione</h2>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>Fecha check-in hotel</label>
+                        <input type="date" name="bday" max="3000-12-31" min="1000-01-01" class="form-control">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Fecha check-out hotel</label>
+                        <input type="date" name="bday" min="1000-01-01" max="3000-12-31" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label class="viajeros"></label>
+                    <select name="cantidad" id="viajerosadultos">
+                        <option value="0a">Cantidad viajeros adultos</option>
+                        <option value="1a">1 adulto</option>
+                        <option value="2a">2 adultos</option>
+                        <option value="3a">3 adultos</option>
+                        <option value="4a">4 adultos</option>
+                        <option value="5a">5 adultos</option>
+                        <option value="6a">6 adultos</option>
+                        <option value="7a">7 adultos</option>
+                        <option value="8a">8 adultos</option>
+                        <option value="9a">9 adultos</option>
+                        <option value="10a">10 adultos</option>
+                    </select>
+                </div>
+                <div class="col-lg-4">
+                    <label class="viajeros"></label>
+                    <select name="cantidad" id="viajerosadultos">
+                        <option value="0n">Cantidad viajeros niñ@s</option>
+                        <option value="1n">1 niñ@</option>
+                        <option value="2n">2 niñ@s</option>
+                        <option value="3n">3 niñ@s</option>
+                        <option value="4n">4 niñ@s</option>
+                        <option value="5n">5 niñ@s</option>
+                        <option value="6n">6 niñ@s</option>
+                        <option value="7n">7 niñ@s</option>
+                        <option value="8n">8 niñ@s</option>
+                        <option value="9n">9 niñ@s</option>
+                        <option value="10n">10 niñ@s</option>
+                    </select>
+                </div>
+                <div class="col-lg-4">
+                    <label class="promociones"></label>
+                    <select name="promos" id="promo">
+                        <option value="0">Promoción seleccionada</option>
+                        <option value="1">Promo Destino del mes</option>
+                        <option value="2">Maldivas</option>
+                        <option value="3">Goa</option>
+                        <option value="4">Nueva Zelanda</option>
+                        <option value="5">Indonesia</option>
+                        <option value="6">Islandia</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <h2>Datos del viajero</h2>
+            <br>
+            <br>
+            <form>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationServer013">Nombre</label>
+                        <input type="text" class="form-control is-valid" id="validationServer013"
+                            placeholder="First name" value="Ingrese su nombre" required>
+                        <div class="valid-feedback">
+                            Muy bien!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationServer023">Apellido</label>
+                        <input type="text" class="form-control is-valid" id="validationServer023"
+                            placeholder="Last name" value="Ingrese su pellido" required>
+                        <div class="valid-feedback">
+                            Muy bien!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationServerUsername33">Username</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend33">@</span>
+                            </div>
+                            <input type="text" class="form-control is-invalid" id="validationServerUsername33"
+                                placeholder="Username" aria-describedby="inputGroupPrepend33" required>
+                            <div class="invalid-feedback">
+                                Por favor, seleccionar un username
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationServer033">Ciudad</label>
+                        <input type="text" class="form-control is-invalid" id="validationServer033"
+                            placeholder="Ingrese su ciudad" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresar una ciudad válida
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="validationServer043">País</label>
+                        <input type="text" class="form-control is-invalid" id="validationServer043"
+                            placeholder="Ingrese su país" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresar un país válido
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="validationServer053">Código postal</label>
+                        <input type="text" class="form-control is-invalid" id="validationServer053"
+                            placeholder="Ingrese su código postal" required>
+                        <div class="invalid-feedback">
+                            Por favor ingresar un código postal válido
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input is-invalid" id="invalidCheck33" required>
+                        <label class="custom-control-label" for="invalidCheck33">Acepto términos y condiciones</label>
+                        <div class="invalid-feedback">
+                            Debe aceptar antes de enviar el formulario
+                        </div>
+                    </div>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-sm" type="submit">Enviar formulario</button>
+            </form>
+            <br>
+            <br>
+            <hr>
+            <h2>Información de pago</h2>
+            <br>
+            <br>
+            <div class="row text-center">
+                <div class="col-md-6 mt-5">
+                    Seleccione método de pago
+                </div>
+                <div class="col-md-6 text-left">
+                    <form action="#">
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" />
+                            <span>Tarjeta de crédito Visa</span>
+                        </label>
+                        <br>
+                        <form action="#">
+                            <label>
+                                <input type="checkbox" class="filled-in" />
+                                <span>Tarjeta de crédito Mastercad</span>
+                            </label>
+                            <br>
+                            <form action="#">
+                                <label>
+                                    <input type="checkbox" class="filled-in" />
+                                    <span>Transferencia bancaria</span>
+                                </label>
+                                <br>
+                                <form action="#">
+                                    <label>
+                                        <input type="checkbox" class="filled-in" />
+                                        <span>Paypal</span>
+                                    </label>
+                                    <br>
+                </div>
+            </div>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-7 mx-auto">
+                        <div class="bg-white rounded-lg shadow-sm p-5">
+                            <!-- Credit card form tabs -->
+                            <ul role="tablist" class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
+                                <li class="nav-item">
+                                    <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill">
+                                        <i class="fa fa-credit-card"></i>
+                                        Tarjeta de crédito
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a data-toggle="pill" href="#nav-tab-paypal" class="nav-link rounded-pill">
+                                        <i class="fa fa-paypal"></i>
+                                        Paypal
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill">
+                                        <i class="fa fa-university"></i>
+                                        Transferencia bancaria
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- End -->
+
+
+                            <!-- Credit card form content -->
+                            <div class="tab-content">
+
+                                <!-- credit card info-->
+                                <div id="nav-tab-card" class="tab-pane fade show active">
+                                    <p class="alert alert-success"></p>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label for="username">Nombre completo (como figura en la tarjeta)</label>
+                                            <input type="text" name="username" placeholder="Su nombre completo" required
+                                                class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cardNumber">Número de tarjeta</label>
+                                            <div class="input-group">
+                                                <input type="text" name="cardNumber" placeholder="Su número de tarjeta"
+                                                    class="form-control" required>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text text-muted">
+                                                        <i class="fa fa-cc-visa mx-1"></i>
+                                                        <i class="fa fa-cc-amex mx-1"></i>
+                                                        <i class="fa fa-cc-mastercard mx-1"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <label><span class="hidden-xs">Fecha de expiración</span></label>
+                                                    <div class="input-group">
+                                                        <input type="number" placeholder="MM" name=""
+                                                            class="form-control" required>
+                                                        <input type="number" placeholder="YY" name=""
+                                                            class="form-control" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group mb-4">
+                                                    <label data-toggle="tooltip"
+                                                        title="Código de tres dígitos del contrafrente de su tarjeta">CVV
+                                                        <i class="fa fa-question-circle"></i>
+                                                    </label>
+                                                    <input type="text" required class="form-control">
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                        <button type="button"
+                                            class="subscribe btn btn-primary btn-block rounded-pill shadow-sm">
+                                            Confirmar
+                                        </button>
+                                    </form>
+                                </div>
+                                <!-- End -->
+
+                                <!-- Paypal info -->
+                                <div id="nav-tab-paypal" class="tab-pane fade">
+                                    <br>
+                                    <br>
+                                    <h5 class="text-md-left">Paypal es la manera más fácil de pagar online</h5>
+                                    <br>
+                                    <br>
+
+                                    <button type="button" class="btn btn-primary rounded-pill"><i
+                                            class="fa fa-paypal mr-2"></i> Ingresar a mi Paypal</button>
+                                    </p>
+                                    <h6 class="text-muted text-left">Política de Protección al Comprador de PayPal
+
+                                        Si no recibís un artículo elegible que compraste con PayPal, o no coincide con
+                                        la descripción del vendedor, te ayudaremos a recuperar el importe completo de la
+                                        compra, incluidos los gastos de envío
+                                    </h6>
+                                    <br>
+                                    <br>
+                                </div>
+                                <!-- End -->
+
+                                <!-- bank transfer info -->
+                                <div id="nav-tab-bank" class="tab-pane fade">
+                                    <br>
+                                    <br>
+                                    <h5>Bank account details</h5>
+                                    <br>
+                                    <dl>
+                                        <dt>Banco</dt>
+                                        <dd> Banco Nación</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Número de cuenta</dt>
+                                        <dd>7775877975</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>CBU</dt>
+                                        <dd>CZ7775877975656</dd>
+                                    </dl>
+                                    <h6 class="text-muted">Las transferencias son gratuitas y libres de cualquier cargo
+                                        o
+                                        comisión dentro de Argentina (Consulta por cargos de servicio desde otro país)
+                                        Son inmediatas. El dinero se transfiere cuando hacés la operación. Pueden ser
+                                        realizadas
+                                        todos los días, los 365 días del año, las 24 horas. Desde cualquier lugar, en tu
+                                        casa desde tu computadora o desde el celular. Son seguras. Se identifican a
+                                        través del CBU o Alias
+
+                                    </h6>
+                                </div>
+                                <!-- End -->
+                            </div>
+                            <!-- End -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <hr>
+            <h2>
+                Información de contacto
+            </h2>
+            <br>
+            <h5>
+                Le informaremos de las principales novedades sobre su estadía y/o excursión junto con el detalle de
+                compra
+            </h5>
+            <br>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputTel4">Teléfono</label>
+                        <input type="number" class="form-control" id="inputTel4">
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <br>
+            <h2>Detalle de compra</h2>
+            <br>
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
+                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Click para ver detalle
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="row border border-default">
+
+                                <div class="bg-info text-center p-2 col-md-12">
+                                    <p class="lead text-white">Una vez realizada la compra este voucher le será enviado
+                                        a su email</p>
+                                </div>
+                                <div class="text-center p-2 col-md-12 text-white bg-info border-top">
+                                    <p class="lead text-white">Hospedaje por una noche en hotel Ibis 3
+                                        estrellas con desayuno incluído en Auckland, Nueva Zelanda+excursión a Península
+                                        de Coromandel+almuerzo incluído</p>
+                                </div>
+                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block">
+                                    <p class="lead text-white">Destino</p>
+                                </div>
+                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small">
+                                    <p class="lead text-white"></p>
+                                </div>
+                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block">
+                                    <p class="lead text-white">Cantidad pasajeros</p>
+                                </div>
+                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small">
+                                    <p>INS</p>
+                                </div>
+                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block">
+                                    <p class="lead text-white">Descripción</p>
+                                </div>
+                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small">
+                                    <p>BAL</p>
+                                </div>
+                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block">
+                                    <p class="lead text-white">Subtotal</p>
+                                </div>
+                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small">
+                                    <p>SUI</p>
+                                </div>
+                                <div class="py-2 col-3 text-center d-none d-sm-block gateway">
+                                    <p class="lead text-black">Auckland-Nueva Zelanda</p>
+                                </div>
+                                <div class="py-2 col-3 text-center d-block d-sm-none">
+                                    <p>YVR</p>
+                                </div>
+                                <div class="py-2 odd col-3 text-center">
+                                    <p class="mark text-danger lead font-weight-bold small">1 adulto</p>
+                                </div>
+                                <div class="py-2 even col-3 text-center">
+                                    <p class="mark text-danger lead font-weight-bold small">Hospedaje por una noche en
+                                        hotel
+                                        Ibis 3 estrellas con desayuno incluído</p>
+                                </div>
+                                <div class="py-2 odd col-3 text-center">
+                                    <p class="mark text-danger lead font-weight-bold small">100 us$</p>
+                                </div>
+                                <div class="py-2 col-3 text-center d-none d-sm-block gateway">
+                                    <p class="lead text-black">Península de Coromandel+almuerzo incluído</p>
+                                </div>
+                                <div class="py-2 col-3 text-center d-block d-sm-none">
+                                    <p>YYZ</p>
+                                </div>
+                                <div class="py-2 odd col-3 text-center">
+                                    <p class="mark text-danger lead font-weight-bold small">1 adulto</p>
+                                </div>
+                                <div class="py-2 even col-3 text-center">
+                                    <p class="mark text-danger lead font-weight-bold small">Excursión a Península de
+                                        Coromandel+almuerzo incluído</p>
+                                </div>
+                                <div class="py-2 odd col-3 text-center">
+                                    <p class="mark text-danger lead font-weight-bold small">150 us$</p>
+                                </div>
+
+                                <div class="py-2 odd col-md-12 text-right">
+                                    <p class="mark text-danger lead font-weight-bold small">TOTAL</p>
+                                </div>
+
+                                <div class="py-3 odd col-md-12 text-right">
+                                    <p class="text-secondary">250 us$</p>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="page-footer font-small footerbg pt-4">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+
+                <!-- Footer links -->
+                <div class="row text-center text-md-left mt-3 pb-3">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Sucribite</h6>
+                        <p class="textofooter">Ingresá tu email para informarte acerca de nuestras promociones</p>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Ingresá tu email"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Ok</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none">
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Aviso legal</h6>
+                        <p class="textofooter">
+                            <a href="#!">Política de privacidad</a>
+                        </p>
+                        <p class="textofooter">
+                            <a href="#!">Política de Privacidad</a>
+                        </p>
+                        <p class="textofooter">
+                            <a href="#!">Política de Cookies</a>
+                        </p>
+                        <p class="textofooter">
+                            <a href="#!">Medidas de seguridad</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Quienes somos</h6>
+                        <p class="textofooter">
+                            <a href="#!">Historia</a>
+                        </p>
+                        <p class="textofooter">
+                            <a href="#!">Equipo</a>
+                        </p>
+                        <p class="textofooter">
+                            <a href="#!">Anéctodas de viajes</a>
+                        </p>
+                        <p class="textofooter">
+                            <a href="#!">Nuestro Obejtivo</a>
+                        </p>
+                    </div>
+
+                    <!-- Grid column -->
+                    <hr class="w-100 clearfix d-md-none">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                        <p class="textofooter">
+                            <i class="fa fa-home mr-3"></i> Buenos Aires, Argentina</p>
+                        <p class="textofooter">
+                            <i class="fa fa-envelope mr-3"></i>info@construyendocaminos.com</p>
+                        <p class="textofooter">
+                            <i class="fa fa-phone mr-3"></i> + 54 11 4444- 0000</p>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Footer links -->
+
+                <hr>
+
+                <!-- Grid row -->
+                <div class="row d-flex align-items-center">
+
+                    <!-- Grid column -->
+                    <div class="col-md-7 col-lg-8">
+
+                        <!--Copyright-->
+                        <p class="textofooter text-center text-md-left">© 2020 Copyright:
+                            <a href="https://wwww.construyendocaminos.com/">
+                                <strong>contruyendocaminos</strong>
+                            </a>
+                        </p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-5 col-lg-4 ml-lg-0">
+
+                        <!-- Social buttons -->
+                        <div class="text-center text-md-right">
+                            <ul class="list-unstyled list-inline">
+                                <li class="list-inline-item">
+                                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+        </footer>
+        <!-- Footer -->
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        };
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+</body>
+
+</html>
