@@ -24,7 +24,15 @@
     <style>
         body {
             font-family: Roboto, sans-serif;
+            background: #f5f5f5;
         }
+
+        .navbar {
+            opacity: 0.8;
+            zoom: 1;
+        }
+
+
 
         h1 {
             font-size: 5rem;
@@ -44,6 +52,17 @@
             color: #fff;
         }
 
+        .card {
+            border-radius: 10px;
+            border-color: #246ca7;
+        }
+
+        .card:hover {
+
+            transition: transform 2s;
+            transform: scale(1.2);
+        }
+
 
         .card-text {
             font-size: 1rem;
@@ -61,7 +80,10 @@
 
         .footerbg {
             background-color: #343a40;
+            opacity: 0.9;
+            zoom: 1;
         }
+
 
         a {
             border-color: #000000;
@@ -83,6 +105,16 @@
         .nav-pills .nav-link.active {
             color: #fff;
         }
+
+        select {
+            border-color: #246ca7;
+            padding: 5%;
+            background-color: #e0ebeb
+        }
+
+        .form-control {
+            border-color: #246ca7;
+        }
     </style>
 </head>
 
@@ -94,7 +126,7 @@
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                         <nav class="navbar navbar-light bg-dark">
                             <a class="navbar-brand" href="#">
-                                <img src="imagenes-tp1/logo.png" width="80" height="80" alt="">
+                                <img src="../tp1/imagenes-tp1/logo4.jpg" width="71" height="71" alt="">
                             </a>
                         </nav>
                         <a class="navbar-brand navbar-light" href="#">
@@ -174,7 +206,7 @@
 
             <div class="row">
                 <div class="col-lg-4">
-                    <label class="viajeros"></label>
+                    <label class="viajeros mr-5"></label>
                     <select name="cantidad" id="viajerosadultos">
                         <option value="0a">Cantidad viajeros adultos</option>
                         <option value="1a">1 adulto</option>
@@ -190,7 +222,7 @@
                     </select>
                 </div>
                 <div class="col-lg-4">
-                    <label class="viajeros"></label>
+                    <label class="viajeros mr-5"></label>
                     <select name="cantidad" id="viajerosadultos">
                         <option value="0n">Cantidad viajeros niñ@s</option>
                         <option value="1n">1 niñ@</option>
@@ -206,7 +238,7 @@
                     </select>
                 </div>
                 <div class="col-lg-4">
-                    <label class="promociones"></label>
+                    <label class="promociones ml-5"></label>
                     <select name="promos" id="promo">
                         <option value="0">Promoción seleccionada</option>
                         <option value="1">Promo Destino del mes</option>
@@ -295,7 +327,7 @@
                         You must agree before submitting.
                     </div>
                 </div>
-                <button class="btn btn-primary btn-sm" type="submit">Enviar formulario</button>
+                <button class="btn btn-success btn-sm mt-3" type="submit">Enviar formulario</button>
             </form>
             <br>
             <br>
@@ -514,7 +546,7 @@
                         <h2 class="mb-0">
                             <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
                                 data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Click para ver detalle
+                                Click para ver/ocultar detalle
                             </button>
                         </h2>
                     </div>
