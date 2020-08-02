@@ -57,11 +57,7 @@
             border-color: #246ca7;
         }
 
-        .card:hover {
 
-            transition: transform 2s;
-            transform: scale(1.2);
-        }
 
 
         .card-text {
@@ -72,10 +68,14 @@
             font-size: 1rem;
         }
 
-        .textofooter,
-        i {
+        .card-preview:hover {
+            color: #669900;
+        }
+
+
+        .textofooter {
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, .5);
+            color: rgba(255, 255, 255, .9);
         }
 
         .footerbg {
@@ -115,6 +115,15 @@
         .form-control {
             border-color: #246ca7;
         }
+
+        .facebook,
+        .twitter,
+        .google-plus,
+        .linkedin {
+
+
+            color: rgba(255, 255, 255, .9);
+        }
     </style>
 </head>
 
@@ -125,11 +134,11 @@
                 <div class="col">
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                         <nav class="navbar navbar-light bg-dark">
-                            <a class="navbar-brand" href="#">
+                            <a class="navbar-brand" href="pagina1.html">
                                 <img src="../tp1/imagenes-tp1/logo4.jpg" width="71" height="71" alt="">
                             </a>
                         </nav>
-                        <a class="navbar-brand navbar-light" href="#">
+                        <a class="navbar-brand navbar-light" href="">
                             <i class="large material-icons">home</i>
                             Home
                         </a>
@@ -173,14 +182,14 @@
         <br>
 
         <main>
-            <div class="card mt-3 mb-3">
-                <img src="../tp1/imagenes-tp1/coromandelcheckout.jpg" class="card-img-top" alt="...">
+            <div class="card-preview mt-3 mb-3">
+                <img src="../tp1/imagenes-tp1/coromandelcheckout.jpg" class="card-img-top img-fluid" alt="coromandel">
                 <div class="card-body">
                     <h5 class="card-title text-center">Desde 250 us$ por persona</h5>
                     <p class="card-text text-center">Tickets para: Hospedaje por una noche en hotel Ibis 3 estrellas con
                         desayuno
                         incluído en Auckland, Nueva Zelanda+excursión a Península de Coromandel+almuerzo incluído</p>
-                    <p class="card-text text-center"><small class="text-muted">Cancelación gratuita hasta 3 días
+                    <p class="card-text text-center"><small class="text-danger">Cancelación gratuita hasta 3 días
                             antes</small></p>
                 </div>
             </div>
@@ -189,15 +198,21 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label>Fecha check-in hotel</label>
-                        <input type="date" name="bday" max="3000-12-31" min="1000-01-01" class="form-control">
+                        <form action="/action_page.php" method="post">
+                            <label>Fecha check-in hotel</label>
+                            <input type="date" name="bday" max="3000-12-31" min="1000-01-01" class="form-control"
+                                required>
                     </div>
+                    </form>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label>Fecha check-out hotel</label>
-                        <input type="date" name="bday" min="1000-01-01" max="3000-12-31" class="form-control">
+                        <form action="/action_page.php" method="post">
+                            <label>Fecha check-out hotel</label>
+                            <input type="date" name="bday" min="1000-01-01" max="3000-12-31" class="form-control"
+                                required>
                     </div>
+                    </form>
                 </div>
             </div>
             <br>
@@ -207,7 +222,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <label class="viajeros mr-5"></label>
-                    <select name="cantidad" id="viajerosadultos">
+                    <select name="cantidad" id="viajerosadultos" required>
                         <option value="0a">Cantidad viajeros adultos</option>
                         <option value="1a">1 adulto</option>
                         <option value="2a">2 adultos</option>
@@ -223,7 +238,7 @@
                 </div>
                 <div class="col-lg-4">
                     <label class="viajeros mr-5"></label>
-                    <select name="cantidad" id="viajerosadultos">
+                    <select name="cantidad" id="viajerosadultos" required>
                         <option value="0n">Cantidad viajeros niñ@s</option>
                         <option value="1n">1 niñ@</option>
                         <option value="2n">2 niñ@s</option>
@@ -239,7 +254,7 @@
                 </div>
                 <div class="col-lg-4">
                     <label class="promociones ml-5"></label>
-                    <select name="promos" id="promo">
+                    <select name="promos" id="promo" required>
                         <option value="0">Promoción seleccionada</option>
                         <option value="1">Promo Destino del mes</option>
                         <option value="2">Maldivas</option>
@@ -264,7 +279,7 @@
                         <input type="text" class="form-control is-valid" id="validationServer013"
                             placeholder="First name" value="Ingrese su nombre" required>
                         <div class="valid-feedback">
-                            Muy bien!
+                            Ok!
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
@@ -272,7 +287,7 @@
                         <input type="text" class="form-control is-valid" id="validationServer023"
                             placeholder="Last name" value="Ingrese su pellido" required>
                         <div class="valid-feedback">
-                            Muy bien!
+                            Ok!
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
@@ -340,30 +355,24 @@
                     Seleccione método de pago
                 </div>
                 <div class="col-md-6 text-left">
-                    <form action="#">
-                        <label>
-                            <input type="checkbox" class="filled-in" checked="checked" />
-                            <span>Tarjeta de crédito Visa</span>
-                        </label>
-                        <br>
-                        <form action="#">
-                            <label>
-                                <input type="checkbox" class="filled-in" />
-                                <span>Tarjeta de crédito Mastercad</span>
-                            </label>
-                            <br>
-                            <form action="#">
-                                <label>
-                                    <input type="checkbox" class="filled-in" />
-                                    <span>Transferencia bancaria</span>
-                                </label>
-                                <br>
-                                <form action="#">
-                                    <label>
-                                        <input type="checkbox" class="filled-in" />
-                                        <span>Paypal</span>
-                                    </label>
-                                    <br>
+                    <input type="radio" name="radio" />
+                    <label class="radio">
+                        Tarjeta de crédito Visa
+                    </label>
+                    <br>
+                    <input type="radio" name="radio" />
+                    <label>
+                        Tarjeta de crédito Mastercard
+                    </label>
+                    <br>
+                    <input type="radio" name="radio" />
+                    <label>Transferencia bancaria
+                    </label>
+                    <br>
+                    <input type="radio" name="radio" />
+                    <label>Paypal
+                    </label>
+                    <br>
                 </div>
             </div>
             <div class="container py-5">
@@ -407,14 +416,15 @@
                                                 class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <label for="cardNumber">Número de tarjeta</label>
+                                            <label for="cardNumber" maxlength="16">Número de tarjeta</label>
                                             <div class="input-group">
-                                                <input type="text" name="cardNumber" placeholder="Su número de tarjeta"
+                                                <input type="number" name="cardNumber"
+                                                    placeholder="Su número de tarjeta de 16 dígitos"
                                                     class="form-control" required>
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text text-muted">
+                                                    <span class="input-group-text">
                                                         <i class="fa fa-cc-visa mx-1"></i>
-                                                        <i class="fa fa-cc-amex mx-1"></i>
+
                                                         <i class="fa fa-cc-mastercard mx-1"></i>
                                                     </span>
                                                 </div>
@@ -495,7 +505,7 @@
                                     </dl>
                                     <h6 class="text-muted">Las transferencias son gratuitas y libres de cualquier cargo
                                         o
-                                        comisión dentro de Argentina (Consulta por cargos de servicio desde otro país)
+                                        comisión dentro de Argentina (consulte por cargos de servicio desde otro país)
                                         Son inmediatas. El dinero se transfiere cuando hacés la operación. Pueden ser
                                         realizadas
                                         todos los días, los 365 días del año, las 24 horas. Desde cualquier lugar, en tu
@@ -528,11 +538,13 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4">
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Ej hola@gmail.com">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputTel4">Teléfono</label>
-                        <input type="number" class="form-control" id="inputTel4">
+                        <input type="tel" class="form-control" id="inputTel4"
+                            placeholder="(Código de país)(código de área)número de teléfono" minlength="5"
+                            maxlength="12">
                     </div>
                 </div>
             </form>
@@ -541,11 +553,11 @@
             <h2>Detalle de compra</h2>
             <br>
             <div class="accordion" id="accordionExample">
-                <div class="card">
+                <div class="card-acordion">
                     <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
-                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-secondary btn-block text-center" type="button" data-toggle="collapse"
+                                data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                 Click para ver/ocultar detalle
                             </button>
                         </h2>
@@ -649,9 +661,9 @@
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Sucribite</h6>
-                        <p class="textofooter">Ingresá tu email para informarte acerca de nuestras promociones</p>
+                        <p class="textofooter">Ingrese su email para informarse acerca de nuestras promociones</p>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Ingresá tu email"
+                            <input type="email" class="form-control" placeholder="Ej hola@gmail.com"
                                 aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="button">Ok</button>
@@ -744,22 +756,22 @@
                             <ul class="list-unstyled list-inline">
                                 <li class="list-inline-item">
                                     <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                        <i class="fa fa-facebook"></i>
+                                        <i class="fa fa-facebook facebook"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                        <i class="fa fa-twitter"></i>
+                                        <i class="fa fa-twitter twitter"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                        <i class="fa fa-google-plus"></i>
+                                        <i class="fa fa-google-plus google-plus"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                        <i class="fa fa-linkedin"></i>
+                                        <i class="fa fa-linkedin linkedin"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -777,6 +789,8 @@
         </footer>
         <!-- Footer -->
     </div>
+
+
     <script type="text/javascript">
         window.onload = function () {
             $(function () {
@@ -784,9 +798,10 @@
             });
         };
 
+
+
+
     </script>
-
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -797,6 +812,8 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+
+
 
 
 </body>

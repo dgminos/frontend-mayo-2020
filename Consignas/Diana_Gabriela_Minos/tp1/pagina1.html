@@ -47,6 +47,12 @@
 
         }
 
+        h3 {
+
+            padding-bottom: 1%;
+        }
+
+
         h6 {
             color: #fff;
         }
@@ -69,12 +75,9 @@
 
         .card:hover {
 
-            transition: transform 2s;
-            transform: scale(1.2);
-
-
+            transition: transform 1s;
+            transform: scale(1.1);
         }
-
 
         .card-text {
             font-size: 1rem;
@@ -83,9 +86,6 @@
         .card-content p {
             font-size: 1rem;
         }
-
-
-
 
         .textofooter,
         i {
@@ -103,6 +103,45 @@
             border-color: #000000;
             color: #28a745;
         }
+
+        .cardblog,
+        .cardblog1 {
+            font-size: 1rem;
+        }
+
+        .bordeblog {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .bordeblog:hover {
+            display: none;
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width:768px) and (max-width: 992px) {
+
+            .blog1,
+            .blog2,
+            .blog3 {
+                margin-left: -38%;
+                margin-top: 13%;
+            }
+
+            .botones-cards1,
+            .botones-cards2,
+            .botones-cards3 {
+
+                margin-top: 2%;
+
+            }
+
+            input:placeholder-shown {
+                text-overflow: ellipsis;
+            }
+
+
+        }
     </style>
 </head>
 
@@ -113,12 +152,12 @@
                 <div class="col">
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                         <nav class="navbar navbar-light bg-dark">
-                            <a class="navbar-brand" href="#">
+                            <a class="navbar-brand img-fluid" href="#">
                                 <img src="../tp1/imagenes-tp1/logo4.jpg" width="71" height="71" alt="">
                             </a>
                         </nav>
                         <a class="navbar-brand navbar-light" href="#">
-                            <i class="large material-icons">home</i>
+                            <i class="large material-icons img-fluid">home</i>
                             Home
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -131,17 +170,17 @@
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
-                                        <i class="large material-icons">star</i>
+                                        <i class="large material-icons img-fluid">star</i>
                                         Destinos <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
-                                        <i class="large material-icons">add_shopping_cart</i>
+                                        <i class="large material-icons img-fluid"> add_shopping_cart</i>
                                         Carrito</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
-                                        <i class="large material-icons">people</i>
+                                        <i class="large material-icons img-fluid">people</i>
                                         Contacto</a>
                                 </li>
                             </ul>
@@ -165,7 +204,7 @@
                             <div class="carousel-item active">
                                 <img src="../tp1/imagenes-tp1/Phi-Phi-island-1024x683.jpg" class="d-block img-fluid"
                                     alt="...">
-                                <div class="carousel-caption d-none d-md-block">
+                                <div class="carousel-caption d-none d-xs-block">
                                     <h1 class="animate__animated animate__rotateInDownLeft">Destino del mes Phi Phi
                                         Island</h1>
                                     <p class="animate__animated animate__slideInUp">Hoteles desde 50 us$.</p>
@@ -173,7 +212,7 @@
                             </div>
                             <div class="carousel-item">
                                 <img src="../tp1/imagenes-tp1/slider-maldivas.jpg" class="d-block img-fluid" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
+                                <div class="carousel-caption d-none d-xs-block">
                                     <h1 class="animate__animated animate__slideInUp">Maldivas</h1>
                                     <p class="animate__animated animate__bounceInDown">Furaveri Island Resort & Spa 5
                                         estrellas
@@ -182,7 +221,7 @@
                             </div>
                             <div class="carousel-item">
                                 <img src="../tp1/imagenes-tp1/slider-goa.jpg" class="d-block img-fluid" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
+                                <div class="carousel-caption d-none d-xs-block">
                                     <h1 class="animate__animated animate__backInDown">Goa, India</h1>
                                     <p class="animate__animated animate__backInUp">Heritage Village Resort & Spa Goa
                                         desde 73
@@ -209,9 +248,9 @@
             <h3 class="my-4">Destinos Desctacados
             </h3>
             <div class="row">
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card text-center h-100">
-                        <img class="card-img-top" src="../tp1/imagenes-tp1/coromandel.jpg" alt="">
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-center">
+                        <img class="card-img-top img-fluid" src="../tp1/imagenes-tp1/coromandel.jpg" alt="">
                         <div class="card-body">
                             <h4 class="card-title">
                                 Hotel+Excursión a Península de Coromandel, Nueva Zelanda
@@ -222,98 +261,134 @@
                             </p>
                         </div>
                     </div>
-                    <div class="botones-cards d-flex justify-content-center">
-                        <a class="mt-3 mb-3 btn btn-info btn-lg" href="pagina2.html"> +Info</a>
+                    <div class="botones-cards1 d-flex justify-content-center">
+                        <a class="mt-4 mb-3 btn btn-info btn-lg" href="pagina2.html"> +Info</a>
 
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card text-center h-100">
-                        <img class="card-img-top" src="../tp1/imagenes-tp1/volcan-batur.jpg" alt="batur">
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-center">
+                        <img class="card-img-top img-fluid" src="../tp1/imagenes-tp1/volcan-batur.jpg" alt="batur">
                         <div class="card-body">
                             <h4 class="card-title">
                                 Hotel+Excursión a Volcán Batur al amanecer -Bali, Indonesia+ Aguas termales
                             </h4>
-                            <p class="card-text">Aventúrate en una ruta de senderismo por el volcán Batur, desde
-                                donde verás un impresionante amanecer. También degustarás un delicioso desayuno
-                                y te relajarás en unas piscinas de aguas termales.</p>
+                            <p class="card-text">Aventúrese en una ruta de senderismo por el volcán Batur, desde
+                                donde verás un impresionante amanecer y relájese en unas piscinas de aguas termales.</p>
                         </div>
                     </div>
-                    <div class="botones-cards d-flex justify-content-center">
-                        <button type="button" class="mt-3 mb-3 btn btn-info btn-lg">+Info</button>
+                    <div class="botones-cards2 d-flex justify-content-center">
+                        <button type="button" class="mt-4 mb-3 btn btn-info btn-lg">+Info</button>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card text-center h-100">
-                        <img class="card-img-top" src="../tp1/imagenes-tp1/laguna-azul-islandia.jpg" alt="lagunaazul">
+                <div class="col-lg-4  mb-4">
+                    <div class="card text-center">
+                        <img class="card-img-top img-fluid" src="../tp1/imagenes-tp1/laguna-azul-islandia.jpg"
+                            alt="lagunaazul">
                         <div class="card-body">
                             <h4 class="card-title">
                                 Hotel+ Excursión a Laguna Azul, Islandia
                             </h4>
-                            <p class="card-text">Situada entre campos de lava, hermosos paisajes y los vapores
+                            <p class="card-text">Situada entre hermosos paisajes y los vapores
                                 provocados por la diferencia de temperatura entre el agua y el entorno hacen de
                                 la laguna un espectáculo natural realmente extraordinario.</p>
                         </div>
                     </div>
-                    <div class="botones-cards d-flex justify-content-center">
-                        <button type="button" class="mt-3 mb-3 btn btn-info btn-lg">+Info</button>
+                    <div class="botones-cards3 d-flex justify-content-center">
+                        <button type="button" class="mt-4 mb-3 btn btn-info btn-lg">+Info</button>
                     </div>
                 </div>
 
             </div>
 
-            <div class="titulo d-flex justify-content-center mt-5 mb-4"></div>
+            <div class="titulo d-flex justify-content-center mt-1 mb-4"></div>
             <hr>
             <h3>Actualidad y turismo
             </h3>
             <hr>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card horizontal">
-                        <div class="card-image">
-                            <img src="../tp1/imagenes-tp1/teletrabajo.jpg">
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <p class="text-right">13-07-20
-                                    Turismo de teletrabajo</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="#">Leer informe</a>
-                            </div>
-                        </div>
+            <br>
+
+            <section class="card bordeblog">
+
+                <div class="row">
+
+                    <div class="col-lg-2 col-md-6 col-sm-12 img-blog1">
+                        <br>
+                        <img src=" ../tp1/imagenes-tp1/blog1jpg.jpg">
+
+
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card horizontal">
-                        <div class="card-image">
-                            <img src="../tp1/imagenes-tp1/hotel-condovac.jpg">
+
+
+
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+
+                        <div class="card-block blog1 p-3">
+                            <h5 class="card-title cardblog1">13-07-20</h5>
+                            <p class="card-text cardblog2">
+                                Turismo de teletrabajo. Nuevas maneras de trabajar y viajar en el mundo IT</p>
+                            <a href="#" class="btn btn-outline-info btnblog">Leer más</a>
+                            <hr>
+                            <br>
+
                         </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <p>14-07-2020
-                                    El Club & Hotel Condovac La Costa ofrece experiencias únicas y seguras a sus
-                                    huéspedes
-                                </p>
-                            </div>
-                        </div>
+
+
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card horizontal">
-                        <div class="card-image">
-                            <img src="../tp1/imagenes-tp1/hotelbeds.jpg">
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <p>17-07-2020
-                                    Hotelbeds firma un nuevo acuerdo estratégico con Louvre Hotels Group</p>
-                            </div>
-                        </div>
+
+
+
+                    <div class="col-lg-2 col-md-6 col-sm-12 img-blog2">
+                        <br>
+                        <img src="../tp1/imagenes-tp1/blog2.jpg">
+
                     </div>
+
+
+
+
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+
+                        <div class="card-block blog2 p-3">
+                            <h5 class="card-title cardblog">14-07-2020</h5>
+                            <p class="card-text cardblog">
+                                El Hotel Condovac La Costa ofrece experiencias únicas y seguras a sus
+                                huéspedes</p>
+                            <a href=" #" class="btn btn-outline-info">Leer más </a>
+                            <hr>
+                            <br>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-lg-2 col-md-6 sm-12 img-blog3">
+
+                        <br>
+                        <img src="../tp1/imagenes-tp1/blog3.jpg">
+
+
+                    </div>
+
+
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+
+                        <div class="card-block blog3 p-3">
+                            <h5 class="card-title cardblog">17-07-2020</h5>
+                            <p class="card-text cardblog">
+                                Hotelbeds firma un nuevo acuerdo estratégico con Louvre Hotels Group</p>
+                            <a href="#" class="btn btn-outline-info">Leer más</a>
+                            <hr>
+                        </div>
+
+                    </div>
+
                 </div>
-            </div>
+
+            </section>
         </main>
+
         <footer class="page-footer font-small footerbg pt-4">
 
             <!-- Footer Links -->
@@ -324,10 +399,11 @@
 
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Sucribite</h6>
-                        <p class="textofooter">Ingresá tu email para informarte acerca de nuestras promociones</p>
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Suscríbase</h6>
+                        <p class="textofooter">Ingrese su email para recibir información acerca de nuestras promociones
+                        </p>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Ingresá tu email"
+                            <input type="text" class="form-control" placeholder="Ej: hola@gmail.com"
                                 aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="button">Ok</button>
@@ -420,22 +496,22 @@
                             <ul class="list-unstyled list-inline">
                                 <li class="list-inline-item">
                                     <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                        <i class="fa fa-facebook"></i>
+                                        <i class="fa fa-facebook img-fluid"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                        <i class="fa fa-twitter"></i>
+                                        <i class="fa fa-twitter img-fluid"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                        <i class="fa fa-google-plus"></i>
+                                        <i class="fa fa-google-plus img-fluid"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                                        <i class="fa fa-linkedin"></i>
+                                        <i class="fa fa-linkedin img-fluid"></i>
                                     </a>
                                 </li>
                             </ul>
