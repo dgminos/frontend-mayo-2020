@@ -124,6 +124,21 @@
 
             color: rgba(255, 255, 255, .9);
         }
+
+        .inputadultos,
+        .inputninos,
+        .inputpromo {
+            border-radius: 10px;
+        }
+
+        @media only screen and (max-width:764px) {
+
+            .inputradio {
+
+                margin-top: 5%;
+            }
+
+        }
     </style>
 </head>
 
@@ -220,9 +235,9 @@
             <br>
 
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4 mt-2">
                     <label class="viajeros mr-5"></label>
-                    <select name="cantidad" id="viajerosadultos" required>
+                    <select name="cantidad" id="viajerosadultos" class="inputadultos" required>
                         <option value="0a">Cantidad viajeros adultos</option>
                         <option value="1a">1 adulto</option>
                         <option value="2a">2 adultos</option>
@@ -236,9 +251,9 @@
                         <option value="10a">10 adultos</option>
                     </select>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 mt-2">
                     <label class="viajeros mr-5"></label>
-                    <select name="cantidad" id="viajerosadultos" required>
+                    <select name="cantidad" id="viajerosadultos" class="inputninos" required>
                         <option value="0n">Cantidad viajeros niñ@s</option>
                         <option value="1n">1 niñ@</option>
                         <option value="2n">2 niñ@s</option>
@@ -252,9 +267,9 @@
                         <option value="10n">10 niñ@s</option>
                     </select>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 mt-2">
                     <label class="promociones ml-5"></label>
-                    <select name="promos" id="promo" required>
+                    <select name="promos" id="promo" class="inputpromo" required>
                         <option value="0">Promoción seleccionada</option>
                         <option value="1">Promo Destino del mes</option>
                         <option value="2">Maldivas</option>
@@ -354,7 +369,7 @@
                 <div class="col-md-6 mt-5">
                     Seleccione método de pago
                 </div>
-                <div class="col-md-6 text-left">
+                <div class="col-md-6 text-left inputradio">
                     <input type="radio" name="radio" />
                     <label class="radio">
                         Tarjeta de crédito Visa
@@ -476,8 +491,8 @@
                                     </p>
                                     <h6 class="text-muted text-left">Política de Protección al Comprador de PayPal
 
-                                        Si no recibís un artículo elegible que compraste con PayPal, o no coincide con
-                                        la descripción del vendedor, te ayudaremos a recuperar el importe completo de la
+                                        Si no recibe un artículo elegible que compró con PayPal, o no coincide con
+                                        la descripción del vendedor, lo ayudaremos a recuperar el importe completo de la
                                         compra, incluidos los gastos de envío
                                     </h6>
                                     <br>
@@ -506,10 +521,10 @@
                                     <h6 class="text-muted">Las transferencias son gratuitas y libres de cualquier cargo
                                         o
                                         comisión dentro de Argentina (consulte por cargos de servicio desde otro país)
-                                        Son inmediatas. El dinero se transfiere cuando hacés la operación. Pueden ser
+                                        Son inmediatas. El dinero se transfiere cuando hace la operación. Pueden ser
                                         realizadas
-                                        todos los días, los 365 días del año, las 24 horas. Desde cualquier lugar, en tu
-                                        casa desde tu computadora o desde el celular. Son seguras. Se identifican a
+                                        todos los días, los 365 días del año, las 24 horas. Desde cualquier lugar, en su
+                                        casa desde su computadora o desde el celular. Son seguras. Se identifican a
                                         través del CBU o Alias
 
                                     </h6>
@@ -565,86 +580,75 @@
 
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                         data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="row border border-default">
+                        <div class="table-responsive-sm">
+                            <table class="table table-hover table-striped table-bordered">
+                                <caption class="sr-only">Lista de descripciones y precios</caption>
+                                <tbody>
+                                    <div class="row">
+                                        <div class="col">
+                                            <thead class="thead table-info text-center">
+                                                <tr>
+                                                    <th scope="col" colspan="5">Una vez realizada la compra este voucher
+                                                        le será enviado
+                                                        a su email</th>
 
-                                <div class="bg-info text-center p-2 col-md-12">
-                                    <p class="lead text-white">Una vez realizada la compra este voucher le será enviado
-                                        a su email</p>
-                                </div>
-                                <div class="text-center p-2 col-md-12 text-white bg-info border-top">
-                                    <p class="lead text-white">Hospedaje por una noche en hotel Ibis 3
-                                        estrellas con desayuno incluído en Auckland, Nueva Zelanda+excursión a Península
-                                        de Coromandel+almuerzo incluído</p>
-                                </div>
-                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block">
-                                    <p class="lead text-white">Destino</p>
-                                </div>
-                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small">
-                                    <p class="lead text-white"></p>
-                                </div>
-                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block">
-                                    <p class="lead text-white">Cantidad pasajeros</p>
-                                </div>
-                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small">
-                                    <p>INS</p>
-                                </div>
-                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block">
-                                    <p class="lead text-white">Descripción</p>
-                                </div>
-                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small">
-                                    <p>BAL</p>
-                                </div>
-                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-none d-sm-block">
-                                    <p class="lead text-white">Subtotal</p>
-                                </div>
-                                <div class="bg-secondary text-white p-2 mb-3 col-3 text-center d-block d-sm-none small">
-                                    <p>SUI</p>
-                                </div>
-                                <div class="py-2 col-3 text-center d-none d-sm-block gateway">
-                                    <p class="lead text-black">Auckland-Nueva Zelanda</p>
-                                </div>
-                                <div class="py-2 col-3 text-center d-block d-sm-none">
-                                    <p>YVR</p>
-                                </div>
-                                <div class="py-2 odd col-3 text-center">
-                                    <p class="mark text-danger lead font-weight-bold small">1 adulto</p>
-                                </div>
-                                <div class="py-2 even col-3 text-center">
-                                    <p class="mark text-danger lead font-weight-bold small">Hospedaje por una noche en
-                                        hotel
-                                        Ibis 3 estrellas con desayuno incluído</p>
-                                </div>
-                                <div class="py-2 odd col-3 text-center">
-                                    <p class="mark text-danger lead font-weight-bold small">100 us$</p>
-                                </div>
-                                <div class="py-2 col-3 text-center d-none d-sm-block gateway">
-                                    <p class="lead text-black">Península de Coromandel+almuerzo incluído</p>
-                                </div>
-                                <div class="py-2 col-3 text-center d-block d-sm-none">
-                                    <p>YYZ</p>
-                                </div>
-                                <div class="py-2 odd col-3 text-center">
-                                    <p class="mark text-danger lead font-weight-bold small">1 adulto</p>
-                                </div>
-                                <div class="py-2 even col-3 text-center">
-                                    <p class="mark text-danger lead font-weight-bold small">Excursión a Península de
-                                        Coromandel+almuerzo incluído</p>
-                                </div>
-                                <div class="py-2 odd col-3 text-center">
-                                    <p class="mark text-danger lead font-weight-bold small">150 us$</p>
-                                </div>
+                                                </tr>
+                                            </thead>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <thead class="thead table-info text-center">
+                                                <tr>
+                                                    <th scope="col" colspan="5">Hospedaje por una noche en hotel Ibis 3
+                                                        estrellas con desayuno incluído en Auckland, Nueva
+                                                        Zelanda+excursión a Península
+                                                        de Coromandel+almuerzo incluído</th>
 
-                                <div class="py-2 odd col-md-12 text-right">
-                                    <p class="mark text-danger lead font-weight-bold small">TOTAL</p>
-                                </div>
+                                                </tr>
+                                            </thead>
+                                        </div>
+                                    </div>
 
-                                <div class="py-3 odd col-md-12 text-right">
-                                    <p class="text-secondary">250 us$</p>
-                                </div>
-                            </div>
-                            <br>
-                            <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">Destino</th>
+                                                    <th scope="col">Cantidad pasajeros</th>
+                                                    <th scope="col">Descripción</th>
+                                                    <th scope="col">Subtotal</th>
+                                                    <th scope="col">TOTAL</th>
+                                                </tr>
+                                            </thead>
+                                        </div>
+                                    </div>
+
+                                    <tr>
+                                        <th scope="row">Auckland-Nueva Zelanda</th>
+                                        <td>1 adulto</td>
+                                        <td>Hospedaje por una noche en
+                                            hotel
+                                            Ibis 3 estrellas con desayuno incluído</td>
+                                        <td>100 us$</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Península de Coromandel+almuerzo incluído</th>
+                                        <td>1 adulto</td>
+                                        <td>Excursión a Península de
+                                            Coromandel+almuerzo incluído</td>
+                                        <td>150 us$</td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr class="total text-right">
+                                        <th scope="col" colspan="5">250 us$</th>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
                 </div>
