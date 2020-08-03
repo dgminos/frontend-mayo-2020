@@ -10,14 +10,12 @@
 
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.bundle.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-
-
-
 
     <title>Construyendo Caminos</title>
 
@@ -32,8 +30,6 @@
             zoom: 1;
         }
 
-
-
         h1 {
             font-size: 5rem;
         }
@@ -45,7 +41,6 @@
         h2,
         h3 {
             text-align: center;
-
         }
 
         h6 {
@@ -56,9 +51,6 @@
             border-radius: 10px;
             border-color: #246ca7;
         }
-
-
-
 
         .card-text {
             font-size: 1rem;
@@ -72,7 +64,6 @@
             color: #669900;
         }
 
-
         .textofooter {
             font-size: 0.9rem;
             color: rgba(255, 255, 255, .9);
@@ -83,7 +74,6 @@
             opacity: 0.9;
             zoom: 1;
         }
-
 
         a {
             border-color: #000000;
@@ -195,7 +185,6 @@
         <br>
         <br>
         <br>
-
         <main>
             <div class="card-preview mt-3 mb-3">
                 <img src="../tp1/imagenes-tp1/coromandelcheckout.jpg" class="card-img-top img-fluid" alt="coromandel">
@@ -233,7 +222,6 @@
             <br>
             <br>
             <br>
-
             <div class="row">
                 <div class="col-lg-4 mt-2">
                     <label class="viajeros mr-5"></label>
@@ -370,7 +358,7 @@
                     Seleccione método de pago
                 </div>
                 <div class="col-md-6 text-left inputradio">
-                    <input type="radio" name="radio" />
+                    <input type="radio" name="radio" selected />
                     <label class="radio">
                         Tarjeta de crédito Visa
                     </label>
@@ -394,7 +382,6 @@
                 <div class="row">
                     <div class="col-lg-7 mx-auto">
                         <div class="bg-white rounded-lg shadow-sm p-5">
-                            <!-- Credit card form tabs -->
                             <ul role="tablist" class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
                                 <li class="nav-item">
                                     <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill">
@@ -415,13 +402,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <!-- End -->
-
-
-                            <!-- Credit card form content -->
                             <div class="tab-content">
-
-                                <!-- credit card info-->
                                 <div id="nav-tab-card" class="tab-pane fade show active">
                                     <p class="alert alert-success"></p>
                                     <form role="form">
@@ -439,7 +420,6 @@
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">
                                                         <i class="fa fa-cc-visa mx-1"></i>
-
                                                         <i class="fa fa-cc-mastercard mx-1"></i>
                                                     </span>
                                                 </div>
@@ -450,9 +430,9 @@
                                                 <div class="form-group">
                                                     <label><span class="hidden-xs">Fecha de expiración</span></label>
                                                     <div class="input-group">
-                                                        <input type="number" placeholder="MM" name=""
+                                                        <input type="number" placeholder="Mes" name=""
                                                             class="form-control" required>
-                                                        <input type="number" placeholder="YY" name=""
+                                                        <input type="number" placeholder="Año" name=""
                                                             class="form-control" required>
                                                     </div>
                                                 </div>
@@ -463,12 +443,9 @@
                                                         title="Código de tres dígitos del contrafrente de su tarjeta">CVV
                                                         <i class="fa fa-question-circle"></i>
                                                     </label>
-                                                    <input type="text" required class="form-control">
+                                                    <input type="text" required class="form-control" maxlength="3">
                                                 </div>
                                             </div>
-
-
-
                                         </div>
                                         <button type="button"
                                             class="subscribe btn btn-primary btn-block rounded-pill shadow-sm">
@@ -476,16 +453,12 @@
                                         </button>
                                     </form>
                                 </div>
-                                <!-- End -->
-
-                                <!-- Paypal info -->
                                 <div id="nav-tab-paypal" class="tab-pane fade">
                                     <br>
                                     <br>
                                     <h5 class="text-md-left">Paypal es la manera más fácil de pagar online</h5>
                                     <br>
                                     <br>
-
                                     <button type="button" class="btn btn-primary rounded-pill"><i
                                             class="fa fa-paypal mr-2"></i> Ingresar a mi Paypal</button>
                                     </p>
@@ -498,9 +471,6 @@
                                     <br>
                                     <br>
                                 </div>
-                                <!-- End -->
-
-                                <!-- bank transfer info -->
                                 <div id="nav-tab-bank" class="tab-pane fade">
                                     <br>
                                     <br>
@@ -529,10 +499,7 @@
 
                                     </h6>
                                 </div>
-                                <!-- End -->
                             </div>
-                            <!-- End -->
-
                         </div>
                     </div>
                 </div>
@@ -577,7 +544,6 @@
                             </button>
                         </h2>
                     </div>
-
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                         data-parent="#accordionExample">
                         <div class="table-responsive-sm">
@@ -591,7 +557,6 @@
                                                     <th scope="col" colspan="5">Una vez realizada la compra este voucher
                                                         le será enviado
                                                         a su email</th>
-
                                                 </tr>
                                             </thead>
                                         </div>
@@ -604,12 +569,10 @@
                                                         estrellas con desayuno incluído en Auckland, Nueva
                                                         Zelanda+excursión a Península
                                                         de Coromandel+almuerzo incluído</th>
-
                                                 </tr>
                                             </thead>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="col">
                                             <thead class="thead-dark">
@@ -623,7 +586,6 @@
                                             </thead>
                                         </div>
                                     </div>
-
                                     <tr>
                                         <th scope="row">Auckland-Nueva Zelanda</th>
                                         <td>1 adulto</td>
@@ -641,28 +603,19 @@
                                         <td>150 us$</td>
                                         <td></td>
                                     </tr>
-
                                     <tr class="total text-right">
                                         <th scope="col" colspan="5">250 us$</th>
-
                                     </tr>
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
                 </div>
             </div>
         </main>
         <footer class="page-footer font-small footerbg pt-4">
-
-            <!-- Footer Links -->
             <div class="container text-center text-md-left">
-
-                <!-- Footer links -->
                 <div class="row text-center text-md-left mt-3 pb-3">
-
-                    <!-- Grid column -->
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Sucribite</h6>
                         <p class="textofooter">Ingrese su email para informarse acerca de nuestras promociones</p>
@@ -674,12 +627,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Grid column -->
-
                     <hr class="w-100 clearfix d-md-none">
-
-                    <!-- Grid column -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Aviso legal</h6>
                         <p class="textofooter">
@@ -695,11 +643,7 @@
                             <a href="#!">Medidas de seguridad</a>
                         </p>
                     </div>
-                    <!-- Grid column -->
-
                     <hr class="w-100 clearfix d-md-none">
-
-                    <!-- Grid column -->
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Quienes somos</h6>
                         <p class="textofooter">
@@ -715,11 +659,7 @@
                             <a href="#!">Nuestro Obejtivo</a>
                         </p>
                     </div>
-
-                    <!-- Grid column -->
                     <hr class="w-100 clearfix d-md-none">
-
-                    <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                         <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
                         <p class="textofooter">
@@ -729,33 +669,17 @@
                         <p class="textofooter">
                             <i class="fa fa-phone mr-3"></i> + 54 11 4444- 0000</p>
                     </div>
-                    <!-- Grid column -->
-
                 </div>
-                <!-- Footer links -->
-
                 <hr>
-
-                <!-- Grid row -->
                 <div class="row d-flex align-items-center">
-
-                    <!-- Grid column -->
                     <div class="col-md-7 col-lg-8">
-
-                        <!--Copyright-->
                         <p class="textofooter text-center text-md-left">© 2020 Copyright:
                             <a href="https://wwww.construyendocaminos.com/">
                                 <strong>contruyendocaminos</strong>
                             </a>
                         </p>
-
                     </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
                     <div class="col-md-5 col-lg-4 ml-lg-0">
-
-                        <!-- Social buttons -->
                         <div class="text-center text-md-right">
                             <ul class="list-unstyled list-inline">
                                 <li class="list-inline-item">
@@ -780,31 +704,17 @@
                                 </li>
                             </ul>
                         </div>
-
                     </div>
-                    <!-- Grid column -->
-
                 </div>
-                <!-- Grid row -->
-
             </div>
-            <!-- Footer Links -->
-
         </footer>
-        <!-- Footer -->
     </div>
-
-
     <script type="text/javascript">
         window.onload = function () {
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip();
             });
         };
-
-
-
-
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -816,9 +726,6 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-
-
-
 
 </body>
 
