@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="desciption" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--
+    // precio de lista de proveedor
+    producto        precio
+    vino_x_unidad = 100 
+    azucar_x_kg = 60
+    cafe_x_kg = 230
+    leche_x_unidad = 45
+    pan_lactal_x_unidad = 95
+    leche_x_unidad = 45
+    queso_x_kg  = 120
+    paleta_x_kg  = 150
+    ej : [[producto,precio],[producto,precio]]
+    1) armar un array con todos los productos y sus precios
+    2) armar una lista de precios de venta con el 40% de ganancia  
+    3) armar una lista de venta  con los precios con iva (21%) para consumidor final
+    4) tener un boton que simule cargar de productos de proveedor(esto es para procesar la lista de precios) 
+    5) el boton de carga luego de ejecutarse debera mostrar un cartel/o texto en pantalla que afirme la carga
+    6) mostrar lista de precios con iva en pantalla y permitir que se seleccionen productos individualmente con un boton de carrito
+    7) guardar la lista de productos seleccionados  en un array
+    8) tener una lista visible de productos seleccionados en tiempo real .(es decir cada vez que apreto un carrito actualizar esta lista)
+    9) calcular precio de total y mostrar precio en pantalla
+    -->
+    <style>
+        body {
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1 class="d-flex justify-content-center">
+            Tu proveedor amigo
+        </h1>
+        <button type="button" class="btn btn-primary ml-5 mb-3" onclick="alerta()">
+            Cargar precios
+        </button>
+        <div class="row">
+            <div class="lista_con_boton ml-3 pl-4 col-5">
+                <ul id="listaIva"></ul>
+            </div>
+        </div>
+        <div>
+            <ul id="listaCompra"></ul>
+        </div>
+    </main>
+</body>
+<script>
+    let lista_proveedor = [['vino_x_unidad', 100], ['azucar_x_kg', 60], ['cafe_x_kg', 230], ['leche_x_unidad', 45], ['pan_lactal_x_unidad', 95], ['queso_x_kg', 120], ['paleta_x_kg', 150]];
+    let productos_seleccionados = [];
+    let lista_con_iva = [];
+
+    // genero la lista con ganancia
+    function ganancia() {
+        lista_con_ganancia = lista_proveedor.map(function (x) {
+            var nuevo = (x[1] * 0.40) + x[1];
+            let resultado_ganancia = [x[0], nuevo];
+            return resultado_ganancia;
+        });
+    }
+
+    // a partir de la ganancia genero la lista con iva
+    function iva() {
+        lista_con_iva = lista_con_ganancia.map(function (x) {
+            var calculo_iva = (x[1] * 0.21) + x[1];
+            return [x[0], calculo_iva];
+        });
+    }
+
+    function generarElementos() {
+        ganancia();
+
+        iva();
+
+        var resultados = '';
+        lista_con_iva.forEach((element, index) => {
+            // asigno el elemento y el parametro que le paso a comprar es el indice del elemento que estoy iterando ahora
+            resultados +=
+                '<li>' +
+                element[0] + '= $' + element[1] +
+                `<button 
+                type="button" 
+                class="btn btn-primary ml-4"
+                onclick="comprar(${index})">
+                    <i 
+                    class="fa fa-shopping-cart" 
+                    aria-hidden="true">
+                    </i>
+                </button>` +
+                '</li><br>'
+        });
+        var data = (document.getElementById("listaIva").innerHTML = '<h2>Lista de precios: </h2>' + resultados);
+    }
+
+    function alerta() {
+        generarElementos();
+        alert('Los precios fueron cargados');
+    }
+
+    function comprar(index) {
+        var dataLista;
+        document.getElementById("listaCompra").innerHTML += "<li>Agregaste: " + lista_con_iva[index];
+        console.log('Elemento a agregar:' + lista_con_iva[index][0]);
+        console.log('precio: $' + lista_con_iva[index][1]);
+        productos_seleccionados.push(lista_con_iva[index]);
+
+        var nombres = [];
+        productos_seleccionados.forEach(element => {
+            nombres = nombres + ', ' + element[0];
+        });
+
+        document.getElementById("listaCompra").innerHTML += "<li>Elementos en el carrito: " + nombres;
+
+        var total = 0;
+        productos_seleccionados.forEach(element => {
+            total = total + parseInt(element[1]);
+        });
+
+        document.getElementById("listaCompra").innerHTML += "<li>Precio total: $" + total;
+
+
+    }
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+
+</html>

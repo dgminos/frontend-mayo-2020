@@ -109,6 +109,45 @@
 
         }
 
+        function array_map() {
+            //ejemplo de cálculo de precio + iva
+            //precio de compra atado al valor del dolar. dolar de precio de hoy BNA
+            var arr_compra = [90, 180, 85, 350]; //cambia cada 2 semanas
+            var dolar_hoy = 79 // podría también llamarse a una api del BNA que trae el precio del momento
+            var arr_compra_resultante = arr_compra.map(function (x) {
+                calculado = rts
+                return (calculado)
+            }
+            );
+
+            //precio venta sin iva
+            //var arr1 = [150, 220, 115, 450]; //cambia cada 2 semanas
+            var arr_venta = arr_compra_resultante.map(function (x) {
+                return ((x * 0.80) + x);
+            }
+            );
+            //venta con iva
+            var arr_vta_iva = arr_venta.map(function (x) {
+                return ((x * 0.21) + x);
+            }
+            );
+            console.log(arr_resultante);
+        }
+
+        function array_map_text() {
+            var arr_blog_articles = ['titular 1', 'titular 2', 'titular 3', 'titular 4']
+            var titulares = arr_blog_articles.map(function (titular) {
+                titular_primer_letra_mayus = poner_mayus(titular)
+                return (titular_primer_letra_mayus)
+            }
+            );
+            console.log(titulares);
+        }
+
+        function poner_mayus(texto) {
+            return texto.charAt(0).toUpperCase() + texto.slice(1)
+        }
+
     </script>
 
     </body>
