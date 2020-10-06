@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Clientes</title>
+    <script src="js/data/provincias.js"></script>
+    <script src="js/data/departamentos.js"></script>
+</head>
+<!--
+    //EJERCICIO 20
+//1)Obtener lista de jason_provincias de la api de Argentina en formato json():
+                https://infra.datos.gob.ar/catalog/modernizacion/dataset/7/distribution/7.2/download/jason_provincias.json
+                // se puede  descargar y pegar directamente. 
+              
+                2) Armar un formulario que contenga: Nombre, Apellido, Provincia,Localidad, Edad.
+                3)Las provincias deben estar precargadas al cargar la pagina. Las provincias deben estar en un select donde el se deben visualizar 
+                pero el valor debe ser su id.
+                4) El Formulario debe contener un boton para agregar Nuevo Cliente
+                5) La lista de nuevos clientes se debe mostrar en una tabla que se debe actualizar cada vez que se agregue un cliente nuevo.
+                6) La tabla debe permitir a traves de un boton ordenar los clientes por edad
+                7) La tabla debe permitir a traves de un boton ordenar los clientes por provincia
+                8) El nombre y id de la provincia se debe guardar en el array de nuevos clientes
+                9) mostrar total de clientes debajo de la tabla.
+Nota se puede usar array unicamente para guardar los datos .
+                 
+//EJERCICIO 21  
+//1)Obtener lista de jason_departamentos de la api de Argentina en formato json():
+                https://infra.datos.gob.ar/catalog/modernizacion/dataset/7/distribution/7.2/download/jason_provincias.json
+                // se puede  descargar y pegar directamente.        
+2) Agregar al formulario un select_provincias de departamentos que solo muestr una lista de departamentos 
+                   que corresponda a la provincia  previamente seleccionada.
+                3)la columna departamento se debe agregar a la tabla que muestra los clientes
+                4) Se debe agregar al array de clientes el nuevo elemento con su nombre y id.
+                Tiempo estimado de ejercicio en grupo 1.30hs.
+            -->
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Ingrese los datos del cliente</h1>
+                <form action="ejercicio20.html" id="formulario" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" class="form-control" name="apellido" id="apellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="provincia">Provincia</label>
+                        <select class="form-control" id="provincia" name="provincia"
+                            onchange="mostrarDepartamento(this)">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="departamento">Departamento/Partido</label>
+                        <select class="form-control" id="departamento" name="departamento">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="localidad">Localidad</label>
+                        <input type="text" class="form-control" name="localidad" id="localidad">
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad:</label>
+                        <input type="number" class="form-control" name="edad" id="edad">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="btn">Agregar Cliente</button>
+                    <button type="button" class="btn btn-primary" onclick="ordenarClientesPorEdad()">Ordenar Clientes
+                        Por
+                        Edad</button>
+                    <button type="button" class="btn btn-primary" onclick="ordenarClientesPorProvincia()">Ordenar
+                        Clientes Por Provincia</button>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Provincia</th>
+                            <th scope="col">Departamento</th>
+                            <th scope="col">Localidad</th>
+                            <th scope="col">Edad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contenidoTabla">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let provs = [];
+        var departamentos = [];
+        let clientes = [];
+        let json_provincias = [];
+        let json_departamentos = [];
+
+
+        //creo objeto que contenga 2 atributos o propiedades: nombre e id
+        json_provincias.forEach(element => {
+            prov = new Object();
+            prov.nombre = element.nombre;
+            prov.id = element.id;
+            provs.push(prov);
+        });
+
+
+        function obtenerDepartamento() {
+            json_departamentos.forEach((element) => {
+                departamento = new Object();
+                departamento.id = element.id;
+                departamento.nombre = element.nombre;
+                departamento.id_prov = element.provincia.id;
+                departamento.nombre_prov = element.provincia.nombre;
+                departamentos.push(departamento);
+            })
+
+        }
+        var departamentos_provincia_seleccionada = [];
+        function mostrarDepartamento(sel_prov) {
+            console.log('provincia seleccionada : ' + sel_prov)
+            var select_departamentos = document.getElementById("departamento");
+            var html = '';
+
+            console.log('lista total de departamentos : ' + departamentos)
+
+            var departamentos_provincia_seleccionada = departamentos.filter(provin => provin.id_prov === sel_prov);
+            console.log('departamentos de provincia seleccionada : ' + departamentos_provincia_seleccionada)
+            departamentos_provincia_seleccionada.forEach((element) => {
+                html += `<option value= ${element.id}>' ${element.nombre} </option>`;
+            });
+
+            console.log("opciones html generadas: " + html);
+
+            select_departamentos.innerHTML = html;
+
+
+        }
+
+        // ordeno las provincias alfabeticamente
+        var select_provincias = document.getElementById("provincia");
+        provs.sort((a, b) => {
+            if (a.nombre > b.nombre) {
+                return 1;
+            }
+            if (a.nombre < b.nombre) {
+                return -1;
+            }
+            return 0;
+        })
+        select_provincias = {};
+        // genero las opciones
+        provs.forEach(element => {
+            select_provincias.innerHTML += `<option value=${element.id}> ${element.nombre} </option>`;
+        });
+
+        var seleccionProvincia = select_provincias.options[select_provincias.selectedIndex].text;
+
+        mostrarDepartamento(seleccionProvincia);
+
+
+        function guardar() {
+            console.log("guardando cliente..")
+            var cliente = new Object();
+            cliente.nombre = document.getElementById("nombre").value;
+            cliente.apellido = document.getElementById("apellido").value;
+            var e = document.getElementById("provincia");
+            cliente.provincia = e.options[e.selectedIndex].text;
+            cliente.departamento = e.options[e.selectedIndex].text;
+            cliente.localidad = document.getElementById("localidad").value;
+            cliente.edad = document.getElementById("edad").value;
+            clientes.push(cliente);
+            console.log("nuevo cliente: " + JSON.stringify(cliente));
+
+            var tabla = document.getElementById("contenidoTabla");
+
+            tabla.innerHTML = crearTablaHtml(clientes);
+
+            document.getElementById("formulario").reset();
+
+        }
+
+        function crearTablaHtml(array) {
+            var html = '';
+            array.forEach(element => {
+                html += crearFilaHtml(element);
+            });
+            console.log("tabla html creada: " + html);
+            return html;
+        }
+
+        function crearFilaHtml(objeto) {
+            console.log("creando fila html..")
+            var html = '';
+            for (const [key, value] of Object.entries(objeto)) {
+                html += `<td> ${value} </td>`;//celda
+            }
+
+            html = `<tr> ${html} </tr>`//fila
+
+            console.log("fila a insertar:" + html)
+            return html;
+
+        }
+
+        function validarNombre(e) {
+            if (nombre.value == '' || nombre.value == null) {
+                alert('Por favor completa el nombre');
+                e.preventDefault();
+            }
+        }
+        function validarApellido(e) {
+            if (apellido.value == '' || apellido.value == null) {
+                alert('Por favor completa el apellido');
+                e.preventDefault();
+            }
+        }
+        function validarLocalidad(e) {
+            if (localidad.value == '' || localidad.value == null) {
+                alert('Por favor completa la localidad');
+                e.preventDefault();
+            }
+        }
+        function validarEdad(e) {
+            if (edad.value == '' || edad.value == null) {
+                alert('Por favor completa la edad');
+                e.preventDefault();
+            }
+        }
+
+        function validarFormulario(e) {
+            validarNombre(e);
+            validarApellido(e);
+            validarLocalidad(e);
+            validarEdad(e);
+            e.preventDefault(); // para que no refreshe la pagina
+            guardar();
+        }
+
+        // agrego evento al boton para la validacion
+        formulario.addEventListener('submit', validarFormulario);
+
+        // transformo el id en el nombre de la provincia para plasmar en la tabla
+        function id_provincia(identificador) {
+            provs.forEach((item) => {
+                if (item.id == identificador) {
+                    prov_tabla = item.nombre;
+                }
+            });
+            return prov_tabla;
+        }
+
+        function ordenarClientesPorEdad() {
+            clientes.sort(compararClientesPorEdad);
+
+            var tabla = document.getElementById("contenidoTabla");
+            tabla.innerHTML = '';
+            tabla.innerHTML = crearTablaHtml(clientes);
+
+        }
+
+        function compararClientesPorEdad(a, b) {
+
+            const edadA = parseInt(a.edad);
+            const edadB = parseInt(b.edad);
+
+            if (edadA > edadB) return 1;
+            if (edadB > edadA) return -1;
+
+            return 0;
+
+        }
+
+        function ordenarClientesPorProvincia() {
+            clientes.sort(compararClientesPorProvincia);
+
+            var tabla = document.getElementById("contenidoTabla");
+            tabla.innerHTML = '';
+            tabla.innerHTML = crearTablaHtml(clientes);
+
+        }
+
+        function compararClientesPorProvincia(a, b) {
+
+            const provinciaA = a.provincia.toUpperCase();
+            const provinciaB = b.provincia.toUpperCase();
+
+            let comparacion = 0;
+
+            if (provinciaA < provinciaA) {
+                comparacion = -1;
+            }
+            if (provinciaA > provinciaB) {
+                comparacion = 1;
+            }
+            return comparacion;
+        }
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
