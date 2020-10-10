@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function obtener_posts() {
+            //método básico para obtener datos de una api:
+            fetch("http://localhost:3000/posts/", {
+                method: "get"
+            })
+                .then(response => response.json())
+                .then(
+                    //aca podríamos tener una función que nos permita recorrer el json
+                    json => console.log(json))
+                .catch(function (err) {
+                    //error
+                });
+        }
+
+        function obtener_post(id) {
+            //método básico para obtener datos de una api:
+            url = "http://localhost:3000/posts/" + id // posts=endpoint
+            fetch(url, {
+                method: "get"
+            })
+                .then(response => response.json())
+                .then(
+                    //aca podríamos tener una función que nos permita recorrer el json
+                    json => console.log(json))
+                .catch(function (err) {
+                    //error
+                });
+        }
+
+        function obtener_comments() {
+            //método básico para obtener datos de una api:
+            fetch("http://localhost:3000/comments/", {
+                method: "get"
+            })
+                .then(response => response.json())
+                .then(
+                    //aca podríamos tener una función que nos permita recorrer el json
+                    json => console.log(json))
+                .catch(function (err) {
+                    //error
+                });
+        }
+
+        function obtener_comment(id) {
+            //método básico para obtener datos de una api:
+            url = "http://localhost:3000/comments/" + id
+            fetch(url, {
+                method: "get"
+            })
+                .then(response => response.json())
+                .then(
+                    //aca podríamos tener una función que nos permita recorrer el json
+                    json => console.log(json))
+                .catch(function (err) {
+                    //error
+                });
+        }
+
+        function obtener_profile() {
+            //método básico para obtener datos de una api:
+            fetch("http://localhost:3000/profile/", {
+                method: "get"
+            })
+                .then(response => response.json())
+                .then(
+                    //aca podríamos tener una función que nos permita recorrer el json
+                    json => console.log(json))
+                .catch(function (err) {
+                    //error
+                });
+        }
+
+        function obtener_usuarios() {
+            //método básico para obtener datos de una api:
+            fetch("http://localhost:3000/usuarios/", {
+                method: "get"
+            })
+                .then(response => response.json())
+                .then(
+                    //aca podríamos tener una función que nos permita recorrer el json
+                    json => console.log(json))
+                .catch(function (err) {
+                    //error
+                });
+        }
+
+        function obtener_usuario(id) {
+            //método básico para obtener datos de una api:
+            url = "http://localhost:3000/usuarios/" + id
+            fetch(url, {
+                method: "get"
+            })
+                .then(response => response.json())
+                .then(
+                    //aca podríamos tener una función que nos permita recorrer el json
+                    json => console.log(json))
+                .catch(function (err) {
+                    //error
+                });
+        }
+
+
+        function mostrarDatos(data) {
+            data.forEach(element => {
+
+            });
+        }
+    </script>
+</body>
+
+</html>
